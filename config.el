@@ -38,24 +38,22 @@
         rg-show-columns t))
 
 (def-package! ripgrep
-  :commands (ripgrep-regexp))
+  :commands ripgrep-regexp)
 
 (def-package! lispy
-  :commands (lispy-mode)
+  :commands lispy-mode
   :init
   (add-hook 'minibuffer-setup-hook
             (lambda () (when (eq this-command 'eval-expression)
                     (lispy-mode 1)))))
 
 (def-package! lispyville
-  :commands (lispyville-mode)
-  :config
-  (add-hook! 'lispy-mode-hook 'lispyville-mode))
+  :commands lispyville-mode)
 
 (def-package! evil-string-inflection)
 
 (def-package! highlight-thing
-  :commands (highlight-thing-mode)
+  :commands highlight-thing-mode
   :init
   (add-hook! 'prog-mode-hook 'highlight-thing-mode)
   :config
@@ -183,11 +181,10 @@
 (add-hook! 'rg-mode-hook         'wgrep-setup)
 (add-hook! 'emacs-lisp-mode-hook 'lispy-mode)
 (add-hook! 'clojure-mode-hook    'lispy-mode)
+(add-hook! 'lispy-mode-hook      'lispyville-mode)
 
 (after! magit
   (setq magit-diff-refine-hunk 'all))
-
-;; TODO: melhorar o emacs-lisp
 
 (after! org
   (progn
