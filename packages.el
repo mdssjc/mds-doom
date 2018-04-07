@@ -16,3 +16,4 @@
 (package! google-translate)
 (package! clojure-snippets)
 (package! ialign)
+(package! cakecrumbs)

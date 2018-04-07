@@ -102,7 +102,12 @@
 
 (def-package! clojure-snippets
   :after clojure-mode)
-; ---
+
+(def-package! cakecrumbs
+  :config
+  (cakecrumbs-auto-setup))
+
+;; ---
 
 
 
