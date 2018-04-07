@@ -74,6 +74,9 @@
   :config
   (multiple-cursors-mode))
 
+(def-package! ialign
+  :commands ialign)
+
 (def-package! org-pomodoro
   :commands org-pomodoro)
 

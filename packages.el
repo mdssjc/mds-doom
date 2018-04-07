@@ -15,3 +15,4 @@
 (package! google-this)
 (package! google-translate)
 (package! clojure-snippets)
+(package! ialign)
