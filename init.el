@@ -1,4 +1,4 @@
-;;; ~/.config/doom/modules/private/mdssjc/init.el -*- lexical-binding: t; -*-
+;;; private/mdssjc/init.el -*- lexical-binding: t; -*-
 
 
 (setq-default tab-always-indent 'complete
@@ -8,21 +8,8 @@
               c-basic-offset  2
               tab-stop-list '(2 4 6 8 10 12 14)
 
-              ;; FIXME: em testes
               indicate-buffer-boundaries 'right
               indicate-empty-lines       'indicate-buffer-boundaries)
-
-
-;; FIXME: falhas no ivy-switch-buffer
-;; (def-package-hook! ivy-rich
-;;   :pre-config
-;;   ;; (dolist (cmd '(+ivy/switch-workspace-buffer
-;;   ;;                counsel-projectile-switch-to-buffer))
-;;   ;;   (ivy-set-display-transformer cmd '+ivy-buffer-transformer))
-;;   (ivy-set-display-transformer 'ivy-switch-buffer 'ivy-rich-switch-buffer-transformer)
-;;   nil)
-
-
 
 ;; Syntatic
 (def-package-hook! company

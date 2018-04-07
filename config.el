@@ -1,9 +1,10 @@
-;;; ~/.config/doom/mdssjc/config.el -*- lexical-binding: t; -*-
+;;; private/mdssjc/config.el -*- lexical-binding: t; -*-
 
 
 ;;
 ;; Plugins
 ;;
+
 (def-package! restart-emacs
   :commands restart-emacs)
 
@@ -114,7 +115,7 @@
 ;;
 
 ;; General
-(load! lang/racket)
+(load! lang/racket/racket)
 ;; (load! ui/modeline)
 (load! +bindings)
 (load! +evil-commands)

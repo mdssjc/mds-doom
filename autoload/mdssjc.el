@@ -1,4 +1,4 @@
-;;; ~/.config/doom/mdssjc/autoload/mdssjc.el -*- lexical-binding: t; -*-
+;;; private/mdssjc/autoload/mdssjc.el -*- lexical-binding: t; -*-
 
 
 ;;;###autoload

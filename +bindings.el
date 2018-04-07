@@ -1,4 +1,4 @@
-;;; ~/.config/doom/modules/private/mdssjc/+bindings.el -*- lexical-binding: t; -*-
+;;; private/mdssjc/+bindings.el -*- lexical-binding: t; -*-
 
 
 (map! "<f12>"       #'ivy-switch-buffer

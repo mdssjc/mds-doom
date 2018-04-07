@@ -1,5 +1,5 @@
 ;; -*- no-byte-compile: t; -*-
-;;; ~/.config/doom/mdssjc/packages.el
+;;; private/mdssjc/packages.el
 
 (package! restart-emacs)
 (package! rg)

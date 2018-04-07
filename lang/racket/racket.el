@@ -1,4 +1,4 @@
-;;; ~/.config/doom/mdssjc/lang/racket.el -*- lexical-binding: t; -*-
+;;; private/mdssjc/lang/racket/racket.el -*- lexical-binding: t; -*-
 
 (def-package! racket-mode
   :mode "\\.rkt$"
