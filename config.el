@@ -109,7 +109,7 @@
 
 ;; General
 (load! lang/racket)
-(load! ui/modeline)
+;; (load! ui/modeline)
 (load! +bindings)
 (load! +evil-commands)
 
