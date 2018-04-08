@@ -11,13 +11,6 @@
               indicate-buffer-boundaries 'right
               indicate-empty-lines       'indicate-buffer-boundaries)
 
-;; Syntatic
-(def-package-hook! company
-  :pre-init
-  (global-company-mode)
-  nil)
-;; ---
-
 ;; Semantic
 (def-package-hook! langtool
   :pre-config
