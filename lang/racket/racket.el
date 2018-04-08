@@ -4,8 +4,11 @@
   :mode "\\.rkt$"
   :interpreter "racket"
   :config
+  (require 'racket-unicode-input-method)
   (add-hook! racket-mode
-    #'(;; 3rd-party functionality
+    #'(;; Internals
+       racket-unicode-input-method-enable
+       ;; 3rd-party functionality
        lispy-mode
        ;; fontification
        rainbow-delimiters-mode
@@ -78,4 +81,6 @@
         :n "M-C-."       #'racket-visit-module
         :n "M-,"         #'racket-unvisit
         :n "C-c C-f"     #'racket-fold-all-tests
-        :n "C-c C-u"     #'racket-unfold-all-tests))
+        :n "C-c C-u"     #'racket-unfold-all-tests
+        :n "a"           #'racket-align
+        :n "A"           #'racket-unalign))
