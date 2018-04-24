@@ -23,7 +23,8 @@
     (setq-local company-frontends `(company-pseudo-tooltip-unless-just-one-frontend
                                     company-preview-if-just-one-frontend
                                     company-preview-common-frontend
-                                    ,(when company-quickhelp-mode
+                                    ,(when (and (fboundp 'company-quickhelp-mode)
+                                                company-quickhelp-mode)
                                        'company-quickhelp-frontend))))
 
   (add-hook! racket-mode
