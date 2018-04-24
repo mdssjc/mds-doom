@@ -128,8 +128,9 @@
         company-selection-wrap-around t
 
         ;; company quickhelp
-        company-quickhelp-delay     0.25
-        company-quickhelp-max-lines 30))
+        ;; company-quickhelp-delay     0.25
+        ;; company-quickhelp-max-lines 30
+        ))
 
 (def-package! ispell
   ;; :commands (company-ispell)
@@ -177,6 +178,11 @@
              google-translate-query-translate)
   :config
   (setq google-translate-show-phonetic t))
+
+;; FIXME - ver o install do helm
+(def-package! helm-dash
+  :config
+  (setq helm-dash-docsets-path "~/.local/share/Zeal/Zeal/docsets"))
 ;; ---
 
 (add-hook! 'rg-mode-hook         'wgrep-setup)
