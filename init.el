@@ -14,15 +14,13 @@
 ;; Semantic
 (def-package-hook! langtool
   :pre-config
-  (setq langtool-language-tool-jar "~/Documents/Git/languagetool/languagetool-standalone/target/LanguageTool-4.2-SNAPSHOT/LanguageTool-4.2-SNAPSHOT/languagetool.jar"
-        langtool-default-language  "pt-BR"
+  (setq langtool-default-language  "pt-BR"
         langtool-mother-tongue     "pt-BR"
-        langtool-autoshow-message-function
-        (lambda (overlays)
-          (when (require 'popup nil t)
-            (unless (or popup-instances
-                        (memq last-command '(keyboard-quit)))
-              (let ((msg (langtool-details-error-message overlays)))
-                (popup-tip msg))))))
+        langtool-autoshow-message-function (lambda (overlays)
+                                             (when (require 'popup nil t)
+                                               (unless (or popup-instances
+                                                           (memq last-command '(keyboard-quit)))
+                                                 (let ((msg (langtool-details-error-message overlays)))
+                                                   (popup-tip msg))))))
   nil)
 ;; ---
