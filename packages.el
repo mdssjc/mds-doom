@@ -17,3 +17,4 @@
 (package! clojure-snippets)
 (package! ialign)
 (package! cakecrumbs)
+(package! company-quickhelp)
