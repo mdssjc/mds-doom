@@ -20,12 +20,15 @@
     (setq-local racket-smart-open-bracket-enable t))
 
   (add-hook! racket-mode
-    (setq-local company-frontends `(company-pseudo-tooltip-unless-just-one-frontend
-                                    company-preview-if-just-one-frontend
-                                    company-preview-common-frontend
-                                    ,(when (and (fboundp 'company-quickhelp-mode)
-                                                company-quickhelp-mode)
-                                       'company-quickhelp-frontend))))
+    (progn
+      (setq-local company-frontends '(company-pseudo-tooltip-unless-just-one-frontend
+                                      company-preview-if-just-one-frontend
+                                      company-preview-common-frontend))
+      (when (fboundp 'company-quickhelp-mode)
+        (progn
+          (company-quickhelp-local-mode)
+          (setq-local company-quickhelp-delay     0.25)
+          (setq-local company-quickhelp-max-lines 30)))))
 
   (add-hook! racket-mode
     (setq-local company-backends '((company-capf
