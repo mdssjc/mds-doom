@@ -206,6 +206,7 @@
                                    ("CANCELED" . "red1"))
           org-pretty-entities t
           org-hide-emphasis-markers t
+          org-tags-column -77
           ;; Agenda
           org-agenda-files (list "~/Documents/GTD/someday-maybe.org"
                                  "~/Documents/GTD/calendar.org"
