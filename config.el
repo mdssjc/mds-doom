@@ -63,8 +63,7 @@
         highlight-thing-case-sensitive-p t)
   (set-face-attribute 'highlight-thing nil
                       :foreground "gold"
-                      ;:background (doom-color 'bg)
-                      :background "#282c34"))
+                      :background (doom-color 'bg)))
 
 (def-package! multiple-cursors
   :commands (multiple-cursors-mode mc/add-cursor-on-click mc/mark-next-like-this
