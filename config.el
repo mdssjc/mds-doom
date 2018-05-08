@@ -115,7 +115,7 @@
 
 ;; General
 (load! lang/racket/racket)
-;; (load! ui/modeline)
+(load! ui/modeline)
 (load! +bindings)
 (load! +evil-commands)
 
