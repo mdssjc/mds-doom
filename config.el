@@ -63,7 +63,8 @@
         highlight-thing-case-sensitive-p t)
   (set-face-attribute 'highlight-thing nil
                       :foreground "gold"
-                      :background (doom-color 'bg)))
+                      ;; :background (doom-color 'bg)
+                      :background "#282c34"))
 
 (def-package! multiple-cursors
   :commands (multiple-cursors-mode mc/add-cursor-on-click mc/mark-next-like-this
@@ -207,9 +208,9 @@
           org-hide-emphasis-markers t
           org-tags-column -77
           ;; Agenda
-          org-agenda-files (list "~/Documents/GTD/someday-maybe.org"
-                                 "~/Documents/GTD/calendar.org"
-                                 "~/Documents/GTD/projects.org")
+          org-agenda-files '("~/Documents/GTD/someday-maybe.org"
+                             "~/Documents/GTD/calendar.org"
+                             "~/Documents/GTD/projects.org")
           org-agenda-custom-commands '(("W" "Weekly Review"
                                         ((agenda "" ((org-agenda-ndays 7)))
                                          (stuck "")
