@@ -88,3 +88,11 @@
         :n "F"   #'racket-unfold-all-tests
         :n "a"   #'racket-align
         :n "A"   #'racket-unalign))
+
+
+;;
+;; Plugins
+;;
+
+(def-package! highlight-quoted
+  :commands highlight-quoted-mode)
