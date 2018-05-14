@@ -1,4 +1,4 @@
-;;; private/mdssjc/lang/racket/racket.el -*- lexical-binding: t; -*-
+;;; lang/racket/racket.el -*- lexical-binding: t; -*-
 
 (def-package! racket-mode
   :mode "\\.rkt$"
