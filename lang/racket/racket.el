@@ -5,11 +5,28 @@
   :interpreter "racket"
   :config
   (require 'racket-unicode-input-method)
+
+  (set! :popup  "^\\*racket-repl" nil '((quit) (select)))
+  (set! :repl   'racket-mode #'racket-repl)
+  (set! :eval   'racket-mode #'racket-send-region)
+  (set! :lookup 'racket-mode
+    :definition    #'racket-describe
+    :documentation #'racket-doc)
+  ;; (set! :company-backend 'racket-mode '(company-capf
+  ;;                                       company-abbrev
+  ;;                                       company-dabbrev-code
+  ;;                                       company-dabbrev
+  ;;                                       company-files))
+  (set! :docset '(racket-mode racket-mode) "Racket")
+  (set! :rotate 'racket-mode
+    :symbols '(("#true" "#false")))
+
   (add-hook! racket-mode
     #'(;; Internals
        racket-unicode-input-method-enable
        ;; 3rd-party functionality
        lispy-mode
+       doom|enable-delete-trailing-whitespace
        ;; fontification
        rainbow-delimiters-mode
        highlight-quoted-mode
@@ -36,21 +53,6 @@
                                     company-dabbrev-code
                                     company-dabbrev
                                     company-files))))
-
-  (set! :popup  "^\\*racket-repl" nil '((quit) (select)))
-  (set! :repl   'racket-mode #'racket-repl)
-  (set! :eval   'racket-mode #'racket-send-region)
-  (set! :lookup 'racket-mode
-    :definition    #'racket-describe
-    :documentation #'racket-doc)
-  ;; (set! :company-backend 'racket-mode '(company-capf
-  ;;                                       company-abbrev
-  ;;                                       company-dabbrev-code
-  ;;                                       company-dabbrev
-  ;;                                       company-files))
-  (set! :docset '(racket-mode racket-mode) "Racket")
-  (set! :rotate 'racket-mode
-    :symbols '(("#true" "#false")))
 
   (map! :map racket-mode-map
         :localleader
