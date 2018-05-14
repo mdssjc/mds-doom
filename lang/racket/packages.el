@@ -4,3 +4,4 @@
 ;;; requires racket drracket raco
 
 (package! racket-mode)
+(package! highlight-quoted)
