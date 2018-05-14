@@ -52,25 +52,26 @@
                                     company-abbrev
                                     company-dabbrev-code
                                     company-dabbrev
-                                    company-files))))
+                                    company-files
+                                    company-yasnippet))))
 
   (map! :map racket-mode-map
         :localleader
         :n "c"   #'racket-run
         :n "z"   #'racket-repl
-        :n "r"   #'racket-run-and-switch-to-repl
-        :n "R"   #'racket-racket
+        :n "C"   #'racket-run-and-switch-to-repl
+        :n "x"   #'racket-racket
         :n "t"   #'racket-test
         :n "l"   #'racket-logger
         :n "o"   #'racket-profile
-        :n "s d" #'racket-send-definition
-        :n "s l" #'racket-send-last-sexp
-        :n "s r" #'racket-send-region
-        :n "e d" #'racket-expand-definition
-        :n "e l" #'racket-expand-last-sexp
-        :n "e r" #'racket-expand-region
-        :n "e a" #'racket-expand-again
-        :n "P"   #'racket-open-require-path
+        :n "sd"  #'racket-send-definition
+        :n "sl"  #'racket-send-last-sexp
+        :n "sr"  #'racket-send-region
+        :n "ed"  #'racket-expand-definition
+        :n "el"  #'racket-expand-last-sexp
+        :n "er"  #'racket-expand-region
+        :n "ea"  #'racket-expand-again
+        :n "r"   #'racket-open-require-path
         :n "TAB" #'indent-for-tab-command
         :n "u"   #'racket-backward-up-list
         :n "["   #'racket-smart-open-bracket
