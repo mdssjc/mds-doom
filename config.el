@@ -115,7 +115,6 @@
 ;;
 
 ;; General
-(load! lang/racket/racket)
 (load! ui/modeline)
 (load! +bindings)
 (load! +evil-commands)
@@ -187,6 +186,7 @@
 
 (add-hook! 'rg-mode-hook         'wgrep-setup)
 (add-hook! 'emacs-lisp-mode-hook 'lispy-mode)
+(add-hook! 'racket-mode-hook     'lispy-mode)
 (add-hook! 'clojure-mode-hook    'lispy-mode)
 (add-hook! 'lispy-mode-hook      'lispyville-mode)
 
