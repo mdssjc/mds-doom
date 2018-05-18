@@ -5,3 +5,4 @@
 
 (package! racket-mode)
 (package! highlight-quoted)
+(package! rainbow-delimiters)
