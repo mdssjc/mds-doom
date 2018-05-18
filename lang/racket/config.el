@@ -1,4 +1,4 @@
-;;; lang/racket/racket.el -*- lexical-binding: t; -*-
+;;; lang/racket/config.el -*- lexical-binding: t; -*-
 
 (def-package! racket-mode
   :mode "\\.rkt$"
@@ -25,13 +25,12 @@
     #'(;; Internals
        racket-unicode-input-method-enable
        ;; 3rd-party functionality
-       lispy-mode
        doom|enable-delete-trailing-whitespace
+       flycheck-mode
        ;; fontification
        rainbow-delimiters-mode
        highlight-quoted-mode
-       highlight-numbers-mode
-       flycheck-mode))
+       highlight-numbers-mode))
 
   (add-hook! racket-mode
     (setq-local racket-smart-open-bracket-enable t))
