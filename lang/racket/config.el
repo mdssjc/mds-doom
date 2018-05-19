@@ -14,14 +14,14 @@
   (set! :lookup 'racket-mode
     :definition    #'racket-describe
     :documentation #'racket-doc)
+  (set! :docset 'racket-mode "Racket")
+  (set! :rotate 'racket-mode
+    :symbols '(("#true" "#false")))
   ;; (set! :company-backend 'racket-mode '(company-capf
   ;;                                       company-abbrev
   ;;                                       company-dabbrev-code
   ;;                                       company-dabbrev
   ;;                                       company-files))
-  (set! :docset '(racket-mode racket-mode) "Racket")
-  (set! :rotate 'racket-mode
-    :symbols '(("#true" "#false")))
 
   (add-hook! racket-mode
     #'(;; Internals
