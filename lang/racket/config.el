@@ -6,9 +6,11 @@
   :config
   (require 'racket-unicode-input-method)
 
-  (set! :popup  "^\\*Racket REPL*" nil '((quit) (select)))
+  (set! :popup  "*Racket REPL*"
+    '((size . 10))
+    '((select . t) (modeline . nil) (quit . t) (transient . 3)))
   (set! :repl   'racket-mode #'+racket/repl)
-  (set! :eval   'racket-mode #'racket-send-last-sexp)
+  (set! :eval   'racket-mode "racket")
   (set! :lookup 'racket-mode
     :definition    #'racket-describe
     :documentation #'racket-doc)
