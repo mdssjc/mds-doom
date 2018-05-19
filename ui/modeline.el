@@ -1,6 +1,5 @@
 ;;; private/mdssjc/ui/modeline.el -*- lexical-binding: t; -*-
 
-
 ;; Modeline
 
 (def-modeline-segment! langtool
@@ -16,9 +15,7 @@
   (buffer-encoding major-mode vcs flycheck))
 
 
-
 ;; ---
-
 
 
 ;; Headerline
