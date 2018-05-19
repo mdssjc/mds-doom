@@ -3,15 +3,16 @@
 
 ;; Modeline
 
-;; (def-modeline-segment! langtool
-;;   (if (boundp 'langtool-mode-line-message) langtool-mode-line-message ""))
+(def-modeline-segment! langtool
+  (when (boundp 'langtool-mode-line-message)
+    langtool-mode-line-message))
 
 (def-modeline-segment! org-pomodoro
   (when (boundp 'org-pomodoro-mode-line)
     org-pomodoro-mode-line))
 
 (def-modeline! main
-  (bar matches " " buffer-info "  %l:%c %p  " org-pomodoro selection-info)
+  (bar matches " " buffer-info "  %l:%c %p  " org-pomodoro langtool selection-info)
   (buffer-encoding major-mode vcs flycheck))
 
 
