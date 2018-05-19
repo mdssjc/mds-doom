@@ -124,12 +124,7 @@
   (setq company-idle-delay 0
         company-minimum-prefix-length 1
         company-show-numbers t
-        company-selection-wrap-around t
-
-        ;; company quickhelp
-        ;; company-quickhelp-delay     0.25
-        ;; company-quickhelp-max-lines 30
-        ))
+        company-selection-wrap-around t))
 
 (def-package! ispell
   ;; :commands (company-ispell)
