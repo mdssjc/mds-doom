@@ -48,10 +48,11 @@
                                     company-files
                                     company-yasnippet))))
 
-  (add-hook! racket-mode
-    (cond ((featurep! :private mdssjc/lang/racket +input)
-           (progn (require 'racket-unicode-input-method)
-                  (racket-unicode-input-method-enable)))))
+  (when (featurep! :private mdssjc/lang/racket +input)
+    (add-hook! racket-mode
+      (progn
+        (require 'racket-unicode-input-method)
+        (racket-unicode-input-method-enable))))
 
   (map! :map racket-mode-map
         :localleader
