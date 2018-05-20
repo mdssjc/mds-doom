@@ -4,8 +4,6 @@
   :mode "\\.rkt$"
   :interpreter "racket"
   :config
-  (require 'racket-unicode-input-method)
-
   (set! :popup  "*Racket REPL*"
     '((size . 10))
     '((select . t) (modeline . nil) (quit . t) (transient . 3)))
@@ -25,7 +23,7 @@
 
   (add-hook! racket-mode
     #'(;; Internals
-       racket-unicode-input-method-enable
+       ;; ...
        ;; 3rd-party functionality
        doom|enable-delete-trailing-whitespace
        flycheck-mode
@@ -49,6 +47,11 @@
                                     company-dabbrev
                                     company-files
                                     company-yasnippet))))
+
+  (add-hook! racket-mode
+    (cond ((featurep! :private mdssjc/lang/racket +input)
+           (progn (require 'racket-unicode-input-method)
+                  (racket-unicode-input-method-enable)))))
 
   (map! :map racket-mode-map
         :localleader
