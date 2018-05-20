@@ -63,13 +63,15 @@
         :n "t"   #'racket-test
         :n "l"   #'racket-logger
         :n "o"   #'racket-profile
-        :n "sd"  #'racket-send-definition
-        :n "sl"  #'racket-send-last-sexp
-        :n "sr"  #'racket-send-region
-        :n "ed"  #'racket-expand-definition
-        :n "el"  #'racket-expand-last-sexp
-        :n "er"  #'racket-expand-region
-        :n "ea"  #'racket-expand-again
+        (:desc "eval" :prefix "s"
+          :n "d" #'racket-send-definition
+          :n "l" #'racket-send-last-sexp
+          :n "r" #'racket-send-region)
+        (:desc "macro expand" :prefix "e"
+          :n "d" #'racket-expand-definition
+          :n "l" #'racket-expand-last-sexp
+          :n "r" #'racket-expand-region
+          :n "a" #'racket-expand-again)
         :n "r"   #'racket-open-require-path
         :n "TAB" #'indent-for-tab-command
         :n "u"   #'racket-backward-up-list
@@ -87,7 +89,9 @@
         :n "f"   #'racket-fold-all-tests
         :n "F"   #'racket-unfold-all-tests
         :n "a"   #'racket-align
-        :n "A"   #'racket-unalign))
+        :n "A"   #'racket-unalign
+        :nv ";"  #'comment-dwim
+        :nv "\\" #'indent-region))
 
 
 ;;
