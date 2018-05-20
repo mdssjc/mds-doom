@@ -22,9 +22,10 @@ _unicode_.
 
 ## Racket
 
-O módulo _Racket_, em breve, será recomendado para o projeto principal do _Doom_.
+O módulo _Racket_ será recomendado para o projeto principal do _Doom_.
 
 ### Todos
 
 - [ ] melhorias nos atalhos do _local leader_;
-- [ ] configuração com as macros do _Doom_.
+- [ ] configuração com as macros do _Doom_;
+- [ ] revisão do company.
