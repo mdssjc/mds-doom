@@ -21,6 +21,8 @@
   ;;                                       company-dabbrev
   ;;                                       company-files))
 
+  (append '((racket . t) (scribble . t)) org-babel-load-languages)
+
   (add-hook! racket-mode
     #'(;; Internals
        ;; ...
