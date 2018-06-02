@@ -115,9 +115,9 @@
 ;;
 
 ;; General
-(load! ui/modeline)
-(load! +bindings)
-(load! +evil-commands)
+(load! "ui/modeline")
+(load! "+bindings")
+(load! "+evil-commands")
 
 ;; Syntatic
 (add-hook! company-mode
@@ -178,6 +178,17 @@
   :config
   (setq helm-dash-docsets-path "~/.local/share/Zeal/Zeal/docsets"))
 ;; ---
+
+(def-menu! +macros
+  "Keyboard Macro Menu."
+  '(("Universal Argument" :exec universal-argument)
+    ("Start Macro"        :exec kmacro-start-macro)
+    ("End Macro"          :exec kmacro-end-macro)
+    ("End And Call Macro" :exec kmacro-end-and-call-macro)
+    ("Kmacro Bind To Key" :exec kmacro-bind-to-key)
+    ("Name Last Macro"    :exec kmacro-name-last-macro)
+    ("Insert Macro"       :exec kmacro-insert-counter))
+  :prompt "Option: ")
 
 (add-hook! 'rg-mode-hook         'wgrep-setup)
 (add-hook! 'emacs-lisp-mode-hook 'lispy-mode)
