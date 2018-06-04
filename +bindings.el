@@ -38,7 +38,7 @@
       "<f9> c"      #'org-capture
       "<f9> g"      #'org-clock-goto
       "<f9> l"      #'org-store-link
-      "<f9> p"      #'org-pomodoro      ; FIXME: adicionar no modeline
+      "<f9> p"      #'org-pomodoro
 
       (:mode prog-mode
         "M-<up>"     #'md/move-lines-up
