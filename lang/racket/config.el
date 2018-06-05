@@ -21,8 +21,6 @@
   ;;                                       company-dabbrev
   ;;                                       company-files))
 
-  (append '((racket . t) (scribble . t)) org-babel-load-languages)
-
   (add-hook! racket-mode
     #'(;; Internals
        ;; ...
@@ -102,3 +100,11 @@
 
 (def-package! highlight-quoted
   :commands highlight-quoted-mode)
+
+(after! org
+    (org-babel-do-load-languages
+     'org-babel-load-languages
+     (append org-babel-load-languages
+             '((racket   . t)
+               ;; (scribble . t)
+               ))))
