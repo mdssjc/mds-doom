@@ -121,10 +121,15 @@
 
 ;; Syntatic
 (add-hook! company-mode
-  (setq company-idle-delay 0
-        company-minimum-prefix-length 1
-        company-show-numbers t
-        company-selection-wrap-around t))
+  (progn
+    (setq company-idle-delay 0
+          company-minimum-prefix-length 1
+          company-show-numbers t
+          company-selection-wrap-around t
+          prescient-save-file (concat doom-cache-dir "prescient-save.el"))
+    (ivy-prescient-mode)
+    (company-prescient-mode)
+    (prescient-persist-mode)))
 
 (def-package! ispell
   ;; :commands (company-ispell)
