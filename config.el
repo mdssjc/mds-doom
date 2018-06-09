@@ -82,22 +82,22 @@
 (def-package! move-dup
   :commands md/move-lines-up md/move-lines-down md/duplicate-up md/duplicate-down)
 
-; Clojure
+;; Clojure
 (after! cider
   (setq nrepl-log-messages t
         cider-repl-display-in-current-window t
         cider-repl-use-clojure-font-lock t
         cider-repl-pop-to-buffer-on-connect nil
-        cider-repl-history-file (concat user-emacs-directory ".local/cache/cider/history-repl")
+        cider-repl-history-file (concat doom-cache-dir "cider/history-repl")
         cider-prompt-save-file-on-load 'always-save
         cider-font-lock-dynamically '(macro core function var)
         nrepl-hide-special-buffers t
         cider-overlays-use-font-lock t
-        cider-eval-result-prefix ";; => "
-        cider-lein-command "~/.sdkman/candidates/leiningen/current/bin/lein")
+        cider-eval-result-prefix ";; => ")
   (cider-repl-toggle-pretty-printing)
   ;; (set! :env "LEIN_HOME")
-  )
+  (unless (file-directory-p (concat doom-cache-dir "cider"))
+    (make-directory (concat doom-cache-dir "cider"))))
 
 (def-package! clojure-snippets
   :after clojure-mode)
