@@ -121,15 +121,14 @@
 
 ;; Syntatic
 (add-hook! company-mode
-  (progn
-    (setq company-idle-delay 0
-          company-minimum-prefix-length 1
-          company-show-numbers t
-          company-selection-wrap-around t
-          prescient-save-file (concat doom-cache-dir "prescient-save.el"))
-    (ivy-prescient-mode)
-    (company-prescient-mode)
-    (prescient-persist-mode)))
+  (setq company-idle-delay 0
+        company-minimum-prefix-length 1
+        company-show-numbers t
+        company-selection-wrap-around t
+        prescient-save-file (concat doom-cache-dir "prescient-save.el"))
+  (ivy-prescient-mode)
+  (company-prescient-mode)
+  (prescient-persist-mode))
 
 (def-package! ispell
   ;; :commands (company-ispell)
@@ -210,11 +209,11 @@
 
 (easy-menu-add-item menu-bar-tools-menu nil kmacro-menu "grep")
 
-(add-hook! 'rg-mode-hook         'wgrep-setup)
-(add-hook! 'emacs-lisp-mode-hook 'lispy-mode)
-(add-hook! 'racket-mode-hook     'lispy-mode)
-(add-hook! 'clojure-mode-hook    'lispy-mode)
-(add-hook! 'lispy-mode-hook      'lispyville-mode)
+(add-hook 'rg-mode-hook         #'wgrep-setup)
+(add-hook 'emacs-lisp-mode-hook #'lispy-mode)
+(add-hook 'racket-mode-hook     #'lispy-mode)
+(add-hook 'clojure-mode-hook    #'lispy-mode)
+(add-hook 'lispy-mode-hook      #'lispyville-mode)
 
 (after! magit
   (setq magit-diff-refine-hunk 'all))
