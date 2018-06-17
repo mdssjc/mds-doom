@@ -82,32 +82,6 @@
 (def-package! move-dup
   :commands md/move-lines-up md/move-lines-down md/duplicate-up md/duplicate-down)
 
-;; Clojure
-(add-hook 'clojure-mode-hook #'lispy-mode)
-(after! cider
-  (setq nrepl-log-messages t
-        cider-repl-display-in-current-window t
-        cider-repl-use-clojure-font-lock t
-        cider-repl-pop-to-buffer-on-connect nil
-        cider-repl-history-file (concat doom-cache-dir "cider/history-repl")
-        cider-prompt-save-file-on-load 'always-save
-        cider-font-lock-dynamically '(macro core function var)
-        nrepl-hide-special-buffers t
-        cider-overlays-use-font-lock t
-        cider-eval-result-prefix ";; => ")
-  (cider-repl-toggle-pretty-printing)
-  (unless (file-directory-p (concat doom-cache-dir "cider"))
-    (make-directory (concat doom-cache-dir "cider")))
-  (clojure-font-lock-setup)
-  (set-company-backend! 'clojure-mode '(company-abbrev
-                                        company-dabbrev-code
-                                        company-dabbrev
-                                        company-files)))
-
-(def-package! clojure-snippets
-  :after clojure-mode)
-;; ---
-
 (def-package! cakecrumbs
   :config
   (cakecrumbs-auto-setup))
@@ -277,3 +251,29 @@
     ;;              (setq org-crypt-key user-password))
     ;;     (message "Use mds-secrets-template.el as the basis for the secrets.el file.")))
     ))
+
+;; Clojure
+(add-hook 'clojure-mode-hook #'lispy-mode)
+(after! cider
+  (setq nrepl-log-messages t
+        cider-repl-display-in-current-window t
+        cider-repl-use-clojure-font-lock t
+        cider-repl-pop-to-buffer-on-connect nil
+        cider-repl-history-file (concat doom-cache-dir "cider/history-repl")
+        cider-prompt-save-file-on-load 'always-save
+        cider-font-lock-dynamically '(macro core function var)
+        nrepl-hide-special-buffers t
+        cider-overlays-use-font-lock t
+        cider-eval-result-prefix ";; => ")
+  (cider-repl-toggle-pretty-printing)
+  (unless (file-directory-p (concat doom-cache-dir "cider"))
+    (make-directory (concat doom-cache-dir "cider")))
+  (clojure-font-lock-setup)
+  (set-company-backend! 'clojure-mode '(company-abbrev
+                                        company-dabbrev-code
+                                        company-dabbrev
+                                        company-files)))
+
+(def-package! clojure-snippets
+  :after clojure-mode)
+;; ---
