@@ -277,3 +277,7 @@
 (def-package! clojure-snippets
   :after clojure-mode)
 ;; ---
+
+;; Markdown
+(remove-hook 'markdown-mode-hook #'auto-fill-mode)
+;; ---
