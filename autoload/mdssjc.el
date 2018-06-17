@@ -2,10 +2,16 @@
 
 
 ;;;###autoload
-(defun gtd ()
+(defun mds/gtd ()
   "Internal function."
   (interactive "")
   (find-file "~/Documents/GTD/dashboard.org"))
+
+;;;###autoload
+(defun mds/gtd-projects ()
+  "Internal function."
+  (interactive "")
+  (find-file "~/Documents/GTD/projects.org"))
 
 
 
