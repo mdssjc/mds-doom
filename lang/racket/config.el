@@ -4,55 +4,42 @@
   :mode "\\.rkt$"
   :interpreter "racket"
   :config
-  (set! :popup  "*Racket REPL*"
+  (set-popup-rule! "*Racket REPL*"
     '((size . 10))
     '((select . t) (modeline . nil) (quit . t) (transient . 3)))
-  (set! :repl   'racket-mode #'+racket/repl)
-  (set! :eval   'racket-mode "racket")
-  (set! :lookup 'racket-mode
-    :definition    #'racket-describe
-    :documentation #'racket-doc)
-  (set! :docset 'racket-mode "Racket")
-  (set! :rotate 'racket-mode
+  (set-repl-handler! 'racket-mode #'+racket/repl)
+  (set-eval-handler! 'racket-mode "racket")
+  (set-lookup-handlers! 'racket-mode
+                        :definition    #'racket-describe
+                        :documentation #'racket-doc)
+  (set-docset! 'racket-mode "Racket")
+  (set-pretty-symbols!  'racket-mode :lambda "lambda")
+  (set-rotate-patterns! 'racket-mode
     :symbols '(("#true" "#false")))
-  ;; (set! :company-backend 'racket-mode '(company-capf
-  ;;                                       company-abbrev
-  ;;                                       company-dabbrev-code
-  ;;                                       company-dabbrev
-  ;;                                       company-files))
+  (set-company-backend! 'racket-mode '(company-abbrev
+                                       company-dabbrev-code
+                                       company-dabbrev
+                                       company-files))
 
   (add-hook! racket-mode
     #'(;; Internals
-       ;; ...
+       racket-unicode-input-method-enable
        ;; 3rd-party functionality
        doom|enable-delete-trailing-whitespace
-       flycheck-mode
        ;; fontification
        rainbow-delimiters-mode
        highlight-quoted-mode
-       highlight-numbers-mode))
+       highlight-numbers-mode
+       ;; initialization
+       flycheck-mode))
+
+  ;; (add-hook racket-repl-mode-hook #'racket-unicode-input-method-enable)
 
   (add-hook! racket-mode
-    (setq-local racket-smart-open-bracket-enable t))
-
-  (add-hook! racket-mode
+    (setq-local racket-smart-open-bracket-enable t)
     (setq-local company-frontends '(company-pseudo-tooltip-unless-just-one-frontend
                                     company-preview-if-just-one-frontend
                                     company-preview-common-frontend)))
-
-  (add-hook! racket-mode
-    (setq-local company-backends '((company-capf
-                                    company-abbrev
-                                    company-dabbrev-code
-                                    company-dabbrev
-                                    company-files
-                                    company-yasnippet))))
-
-  (when (featurep! :private mdssjc/lang/racket +input)
-    (add-hook! racket-mode
-      (progn
-        (require 'racket-unicode-input-method)
-        (racket-unicode-input-method-enable))))
 
   (map! :map racket-mode-map
         :localleader
