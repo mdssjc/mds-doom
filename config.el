@@ -83,6 +83,7 @@
   :commands md/move-lines-up md/move-lines-down md/duplicate-up md/duplicate-down)
 
 ;; Clojure
+(add-hook 'clojure-mode-hook #'lispy-mode)
 (after! cider
   (setq nrepl-log-messages t
         cider-repl-display-in-current-window t
@@ -95,12 +96,17 @@
         cider-overlays-use-font-lock t
         cider-eval-result-prefix ";; => ")
   (cider-repl-toggle-pretty-printing)
-  ;; (set! :env "LEIN_HOME")
   (unless (file-directory-p (concat doom-cache-dir "cider"))
-    (make-directory (concat doom-cache-dir "cider"))))
+    (make-directory (concat doom-cache-dir "cider")))
+  (clojure-font-lock-setup)
+  (set-company-backend! 'clojure-mode '(company-abbrev
+                                        company-dabbrev-code
+                                        company-dabbrev
+                                        company-files)))
 
 (def-package! clojure-snippets
   :after clojure-mode)
+;; ---
 
 (def-package! cakecrumbs
   :config
@@ -212,7 +218,6 @@
 (add-hook 'rg-mode-hook         #'wgrep-setup)
 (add-hook 'emacs-lisp-mode-hook #'lispy-mode)
 (add-hook 'racket-mode-hook     #'lispy-mode)
-(add-hook 'clojure-mode-hook    #'lispy-mode)
 (add-hook 'lispy-mode-hook      #'lispyville-mode)
 
 (after! magit
