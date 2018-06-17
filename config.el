@@ -122,6 +122,7 @@
 (add-hook 'rg-mode-hook          #'wgrep-setup)
 (add-hook 'lispy-mode-hook       #'lispyville-mode)
 (add-hook 'clojure-mode-hook     #'lispy-mode)
+(add-hook 'clojure-mode-hook     #'doom|enable-delete-trailing-whitespace)
 (add-hook 'racket-mode-hook      #'lispy-mode)
 (add-hook 'emacs-lisp-mode-hook  #'lispy-mode)
 (remove-hook 'markdown-mode-hook #'auto-fill-mode)
