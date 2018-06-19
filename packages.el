@@ -1,7 +1,6 @@
 ;; -*- no-byte-compile: t; -*-
 ;;; private/mdssjc/packages.el
 
-(package! restart-emacs)
 (package! rg)
 (package! ripgrep)
 (package! lispy)
