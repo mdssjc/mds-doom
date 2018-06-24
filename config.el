@@ -5,9 +5,6 @@
 ;; Plugins
 ;;
 
-(def-package! restart-emacs
-  :commands restart-emacs)
-
 (def-package! avy
   :commands (avy-goto-char-2
              avy-goto-line
@@ -123,6 +120,7 @@
 (add-hook 'lispy-mode-hook       #'lispyville-mode)
 (add-hook 'clojure-mode-hook     #'lispy-mode)
 (add-hook 'clojure-mode-hook     #'doom|enable-delete-trailing-whitespace)
+(add-hook 'cider-repl-mode-hook  #'eldoc-mode)
 (add-hook 'racket-mode-hook      #'lispy-mode)
 (add-hook 'emacs-lisp-mode-hook  #'lispy-mode)
 (remove-hook 'markdown-mode-hook #'auto-fill-mode)
@@ -174,7 +172,8 @@
         cider-font-lock-dynamically '(macro core function var)
         nrepl-hide-special-buffers t
         cider-overlays-use-font-lock t
-        cider-eval-result-prefix ";; => ")
+        cider-eval-result-prefix ";; => "
+        cider-repl-use-pretty-printing t)
   (cider-repl-toggle-pretty-printing)
   (unless (file-directory-p (concat doom-cache-dir "cider"))
     (make-directory (concat doom-cache-dir "cider")))
