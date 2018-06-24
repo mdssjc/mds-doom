@@ -183,6 +183,9 @@
                                         company-dabbrev
                                         company-files)))
 
+(after! markdown-mode
+  (remove-hook 'markdown-mode-hook #'auto-fill-mode))
+
 (after! org
   (setq org-todo-keywords '((sequence "TODO(t)" "DOING(d)" "BLOCKED(b)" "REVIEW(r)"
                                       "|" "DONE(e)" "ARCHIVED(a)" "CANCELED(c)"))
