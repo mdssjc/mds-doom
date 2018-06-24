@@ -123,7 +123,6 @@
 (add-hook 'cider-repl-mode-hook  #'eldoc-mode)
 (add-hook 'racket-mode-hook      #'lispy-mode)
 (add-hook 'emacs-lisp-mode-hook  #'lispy-mode)
-(remove-hook 'markdown-mode-hook #'auto-fill-mode)
 
 
 (after! company
