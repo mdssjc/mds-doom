@@ -41,7 +41,14 @@
         "<up>"    #'evil-window-up
         "<down>"  #'evil-window-down
         "<left>"  #'evil-window-left
-        "<right>" #'evil-window-right))
+        "<right>" #'evil-window-right)
+
+      (:after evil-easymotion
+        (:map evilem-map
+          "<up>"    #'evilem-motion-previous-line
+          "<down>"  #'evilem-motion-next-line
+          "<left>"  #'evilem-motion-backward-word-begin
+          "<right>" #'evilem-motion-forward-word-begin)))
 
 (add-hook! :append 'evil-mode-hook
   (map!
