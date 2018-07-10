@@ -16,18 +16,8 @@
       "C-M-<"       #'mc/mark-all-dwim
       "C-M->"       #'mc/mark-all-in-region-regexp
 
-      "<s-SPC>"      #'avy-goto-char-timer
-      "<s-up>"       #'avy-goto-line-above
-      "<s-down>"     #'avy-goto-line-below
-      "<s-left>"     #'avy-goto-char-in-line-left
-      "<s-right>"    #'avy-goto-char-in-line-right
       "s-\\ \\"      #'align-regexp
       "s-\\ SPC"     #'ialign
-      :n "g SPC"     #'avy-goto-char-timer
-      :n "g <up>"    #'avy-goto-line-above
-      :n "g <down>"  #'avy-goto-line-below
-      :n "g <left>"  #'avy-goto-char-in-line-left
-      :n "g <right>" #'avy-goto-char-in-line-right
       :n "g \\ \\"   #'align-regexp
       :n "g \\ SPC"  #'ialign
 
