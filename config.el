@@ -110,7 +110,7 @@
 ;; Config
 ;;
 
-(load! "ui/modeline")
+;; (load! "ui/modeline")
 (load! "+bindings")
 (load! "+evil-commands")
 (load! "+menus")
