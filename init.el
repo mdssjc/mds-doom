@@ -16,7 +16,7 @@
   :pre-config
   (setq langtool-default-language  "pt-BR"
         langtool-mother-tongue     "pt-BR"
-        langtool-language-tool-jar "~/Documents/Git/languagetool/languagetool-standalone/target/LanguageTool-4.2-SNAPSHOT/LanguageTool-4.2-SNAPSHOT/languagetool-commandline.jar"
+        langtool-language-tool-jar "~/Documents/Git/languagetool/languagetool-standalone/target/LanguageTool-4.3-SNAPSHOT/LanguageTool-4.3-SNAPSHOT/languagetool-commandline.jar"
         langtool-autoshow-message-function (lambda (overlays)
                                              (when (require 'popup nil t)
                                                (unless (or popup-instances
