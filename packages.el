@@ -15,6 +15,7 @@
 (package! clojure-snippets)
 (package! ialign)
 (package! cakecrumbs)
+(package! deadgrep)
 (package! emacs-snippets
   :recipe (:fetcher github
                     :repo "hlissner/emacs-snippets"

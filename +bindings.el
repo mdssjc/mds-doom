@@ -64,7 +64,8 @@
          :desc "rg-save-search-as-name" :n "S"  #'rg-save-search-as-name
          :desc "rg-list-searches"       :n "t"  #'rg-literal)
        :desc "Ripgrep"    :n "SPC" #'ripgrep-regexp
-       :desc "Counsel-Rg" :n "."   #'counsel-rg)
+       :desc "Counsel-Rg" :n "."   #'counsel-rg
+       :desc "Deadgrep"   :n "t"   #'deadgrep)
      (:desc "syntactic" :prefix "1"
        :desc "cleanup" :n "c" #'whitespace-cleanup
        (:desc "Ispell" :prefix "s"
