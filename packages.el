@@ -16,11 +16,3 @@
 (package! ialign)
 (package! cakecrumbs)
 (package! deadgrep)
-(package! emacs-snippets
-  :recipe (:fetcher github
-                    :repo "hlissner/emacs-snippets"
-                    :files ("*")))
-(package! prescient
-  :recipe (:fetcher github
-                    :repo "raxod502/prescient.el"
-                    :files ("*")))
