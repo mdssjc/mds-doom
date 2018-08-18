@@ -24,9 +24,7 @@
       ;; Org-mode
       "<f9> SPC"    #'mds/gtd
       "<f9> 1"      #'mds/gtd-projects
-      "<f9> a"      #'org-agenda
       "<f9> b"      #'org-switchb
-      "<f9> c"      #'org-capture
       "<f9> g"      #'org-clock-goto
       "<f9> l"      #'org-store-link
       "<f9> p"      #'org-pomodoro
