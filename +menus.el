@@ -1,16 +1,16 @@
 ;;; private/mdssjc/+menus.el -*- lexical-binding: t; -*-
 
 
-(def-menu! +macros
-  "Keyboard Macro Menu."
-  '(("Universal Argument" :exec universal-argument)
-    ("Start Macro"        :exec kmacro-start-macro)
-    ("End Macro"          :exec kmacro-end-macro)
-    ("End And Call Macro" :exec kmacro-end-and-call-macro)
-    ("Kmacro Bind To Key" :exec kmacro-bind-to-key)
-    ("Name Last Macro"    :exec kmacro-name-last-macro)
-    ("Insert Macro"       :exec kmacro-insert-counter))
-  :prompt "Option: ")
+;;def-menu! +macros
+;; "Keyboard Macro Menu."
+;; '(("Universal Argument" :exec universal-argument)
+;;   ("Start Macro"        :exec kmacro-start-macro)
+;;   ("End Macro"          :exec kmacro-end-macro)
+;;   ("End And Call Macro" :exec kmacro-end-and-call-macro)
+;;   ("Kmacro Bind To Key" :exec kmacro-bind-to-key)
+;;   ("Name Last Macro"    :exec kmacro-name-last-macro)
+;;   ("Insert Macro"       :exec kmacro-insert-counter))
+;; :prompt "Option: ")
 
 (easy-menu-define kmacro-menu nil
   "Keyboard Macro Menu."
