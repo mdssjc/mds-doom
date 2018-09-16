@@ -10,9 +10,9 @@
   (when (boundp 'org-pomodoro-mode-line)
     org-pomodoro-mode-line))
 
-(def-modeline! main
-  (bar matches " " buffer-info "  %l:%c %p  " org-pomodoro langtool selection-info)
-  (buffer-encoding major-mode vcs flycheck))
+(def-modeline! 'main
+  '(bar matches " " buffer-info "  %l:%c %p  " org-pomodoro langtool selection-info)
+  '(buffer-encoding major-mode vcs flycheck))
 
 
 ;; ---
