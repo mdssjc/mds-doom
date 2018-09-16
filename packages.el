@@ -16,3 +16,4 @@
 (package! ialign)
 (package! cakecrumbs)
 (package! deadgrep)
+(package! ivy-prescient)
