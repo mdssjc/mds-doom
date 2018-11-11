@@ -3,8 +3,6 @@
 
 (package! rg)
 (package! ripgrep)
-(package! lispy)
-(package! lispyville)
 (package! evil-string-inflection)
 (package! highlight-thing)
 (package! multiple-cursors)
